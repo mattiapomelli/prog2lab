@@ -1,0 +1,5 @@
+Pianeta, nome: Giove, pos: (694, -441, -441), vel: (63, -41, -41)
+Pianeta, nome: Marte, pos: (-441, 694, -441), vel: (-41, 63, -41)
+Pianeta, nome: Saturno, pos: (-441, -441, 694), vel: (-41, -41, 63)
+Stella fissa, nome: Sole, pos: (0, 0, 0)
+Energia totale: 685560

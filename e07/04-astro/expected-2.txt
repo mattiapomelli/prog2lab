@@ -1,0 +1,5 @@
+Pianeta, nome: Giove, pos: (5055, 15155, 15160), vel: (100, 300, 300)
+Pianeta, nome: Marte, pos: (-15158, -15160, -5050), vel: (-300, -300, -100)
+Pianeta, nome: Saturno, pos: (-5048, 5043, 5053), vel: (-100, 100, 100)
+Pianeta, nome: Venere, pos: (15159, -5058, -15153), vel: (300, -100, -300)
+Energia totale: 78818800
