@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class Test {
+public class AnagramsClient {
     
     public static void main(String[] args) {
         Map<String, List<Word>> anagrams = new HashMap<>();
