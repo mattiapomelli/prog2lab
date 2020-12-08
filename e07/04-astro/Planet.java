@@ -2,7 +2,7 @@ import java.util.List;
 
 /**
  * Overview: le istanze di questa classe rappresentano dei pianeti Un pianeta e'
- *           caratterizzato da un nome, una posizione (px, py, px) e una velocita (vx, vy, vz)
+ *           caratterizzato da un nome, un vettore posizione (px, py, px) e un vettore velocita (vx, vy, vz)
  *           Gli oggetti di questo tipo sono mutabili
  */
 public class Planet extends CelestialBody {
