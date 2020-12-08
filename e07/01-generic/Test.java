@@ -1,9 +1,9 @@
 public class Test {    
     public static void main(String[] args) {
-        BoundedSet<String> set = new BoundedSet<>(5);
-        BoundedSet<String> set2 = new BoundedSet<>(5);
-        BoundedSet<String> set3 = new BoundedSet<>(5);
-        BoundedSet<Integer> setInt = new BoundedSet<>(5);
+        Set<String> set = new UnBoundedSet<>();
+        Set<String> set2 = new UnBoundedSet<>();
+        Set<String> set3 = new UnBoundedSet<>();
+        Set<Integer> setInt = new UnBoundedSet<>();
         setInt.add(2);
         setInt.add(1);
         set.add("Ciao");

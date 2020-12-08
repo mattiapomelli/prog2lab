@@ -1,16 +1,28 @@
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.NoSuchElementException;
 
+/**
+ * Overview: Le istanze di questa classe rappresentano delle figure
+ *           Una figura e' un insieme finito di coordinate {(r1, c1),(r2, c2), ..., (rn, cn)} tali che 
+ *           i != j -> (ri, yi) != (rj, cj)  per i=0,..,n j=0,..,n
+ * 
+ * AF(coordinates) = { (ri, ci) | 0 <= i < coordinates.size() }
+ * RI: coordinates non contiene duplicati, garantito perche' coordinates e' un UnBoundedSet, il quale non contiene duplicati
+ *          
+ */
 public abstract class Figure implements Iterable<Coordinate> {
     
-    protected List<Coordinate> coordinates;
+    // Struttura dati che contiene le coordinate di this
+    protected UnBoundedSet<Coordinate> coordinates;
 
+    /**
+     * Inizializza this affinche rappresenti la figura con nessuna coordinata
+     */
     public Figure() {
-        coordinates = new ArrayList<>();
+        coordinates = new UnBoundedSet<>();
     }
 
+    @Override
     public String toString() {
         String res = "Figure: {";
         if(coordinates.size() > 0) {
@@ -23,9 +35,14 @@ public abstract class Figure implements Iterable<Coordinate> {
         return res + "}";
     } 
 
+    /**
+     * @return un generatore che produce le coordinate di this
+     */
     @Override
     public Iterator<Coordinate> iterator() {
         return new Iterator<Coordinate>() {
+
+            // RI: i <= coordinates.size()
 
             private int i = 0;
 
@@ -42,5 +59,9 @@ public abstract class Figure implements Iterable<Coordinate> {
         };
     }
 
-
+    @Override public boolean equals(Object o) {
+        if( !(o instanceof Figure)) return false;
+        Figure f = (Figure) o;
+        return coordinates.equals(f.coordinates);
+    }
 }

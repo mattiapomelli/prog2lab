@@ -1,22 +1,12 @@
 import java.util.Scanner;
 
 public class Interpreter {
-
-    // BitMap map;
-    
-
-    // public Interpreter() {
-    //     map = new BitMap(1, 1);
-    //     matrices = new int[1000][][];
-    // }
-
-    // public void readMatrix(int index, int m[][]) {
-    //     matrices[]
-    // }
     
     public static void main(String[] args) {
         BitMap map = null;
         int[][][] matrices = new int[1000][][];
+
+        //System.out.println(new Rectangle(4, 3, 1, 2));
         
         Scanner s = new Scanner(System.in);
         while (s.hasNext()) {
@@ -62,10 +52,10 @@ public class Interpreter {
                     map.draw(new Stamp(matrices[s.nextInt()], s.nextInt(), s.nextInt()));
                     break;
                 case 'p':
-                    System.out.println(map);
+                    System.out.print(map);
                     break;
                 default:
-                    System.out.println("default");
+                    break;
             }
         }
 
