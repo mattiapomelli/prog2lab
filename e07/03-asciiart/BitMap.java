@@ -114,7 +114,7 @@ public class BitMap {
 
     @Override
     public String toString() {
-        String res = "BitMap: \n";
+        String res = "";
         for(int i = 0; i < b; i++) {
             for(int j = 0; j < h; j++)
                 res += pixels[i][j].toString();

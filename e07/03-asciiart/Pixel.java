@@ -46,7 +46,7 @@ public class Pixel {
 
     @Override
     public String toString() {
-        return on ? "*" : "-";
+        return on ? "*" : ".";
     }
 
     @Override
