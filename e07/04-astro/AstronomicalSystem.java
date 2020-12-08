@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -107,11 +109,20 @@ public class AstronomicalSystem {
 
     @Override
     public String toString() {
-        String res = "Astronomical System: \n";
+        String res ="";
+        Collections.sort(bodies,
+            new Comparator<>() {
+                @Override
+                public int compare(CelestialBody o1, CelestialBody o2) {
+                    return o1.name.compareTo(o2.name);
+                }
+            }
+        );
+
         for(CelestialBody b : bodies) {
-            res += b.toString()+ "\n" ;
+            res += b.toString() + "\n" ;
         }
-        res += "Energia Totale: " + totalEnergy();
+        res += "Energia totale: " + totalEnergy();
         return res;
     }
 }

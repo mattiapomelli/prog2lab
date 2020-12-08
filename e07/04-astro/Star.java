@@ -21,7 +21,7 @@ public class Star extends CelestialBody {
 
 	@Override
 	public String toString() {
-		return "Stella, " + super.toString();
+		return "Stella fissa, " + super.toString();
 	}
     
 }
