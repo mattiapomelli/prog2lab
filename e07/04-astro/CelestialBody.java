@@ -5,7 +5,7 @@
 public abstract class CelestialBody {
     
     public final String name;
-    public Vector position;
+    protected Vector position;
 
     /**
      * Inizializza this affinche rappresenti un corpo celeste di nome name e in posizione position

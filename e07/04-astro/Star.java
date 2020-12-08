@@ -16,12 +16,11 @@ public class Star extends CelestialBody {
 
 	@Override
 	public long energy() {
-		return potentialEnergy();
+		return 0;
 	}
 
 	@Override
 	public String toString() {
 		return "Stella fissa, " + super.toString();
 	}
-    
 }

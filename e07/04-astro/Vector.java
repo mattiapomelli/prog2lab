@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Overview: Le istanze di questa classe rappresentano vettori tridimensionali
  * nello spazio, a coordinate intere. Un vettore tipico e' (x, y, z) dove x, y e
@@ -48,16 +50,20 @@ public class Vector {
     /**
      * @param v un vettore da sommare a this
      * @return un nuovo vettore che rappresenta la somma tra this + v
+     * @throws NullPointerException se v e' null
      */
     public Vector add(Vector v) {
+        Objects.requireNonNull(v);
         return new Vector(x + v.x, y + v.y, z + v.z);
     }
 
     /**
-     * @param o un vettore con cui comparare this
+     * @param o vettore la cui coordinata x viene confrontata con quella di this
      * @return 0 se this e o hanno la stessa coordinata x, 1 se this ha coordinata x maggiore di o, -1 altrimenti
+     * @throws NullPointerException se o e' null
      */
     public int compareX(Vector o) {
+        Objects.requireNonNull(o);
         int res;
         if( (res = Integer.compare(o.x, x)) != 0)
             return res > 0 ? 1 : -1;
@@ -65,10 +71,12 @@ public class Vector {
     }
 
     /**
-     * @param o un vettore con cui comparare this
+     * @param o vettore la cui coordinata y viene confrontata con quella di this
      * @return 0 se this e o hanno la stessa coordinata y, 1 se this ha coordinata y maggiore di o, -1 altrimenti
+     * @throws NullPointerException se o e' null
      */
     public int compareY(Vector o) {
+        Objects.requireNonNull(o);
         int res;
         if( (res = Integer.compare(o.y, y)) != 0)
             return res > 0 ? 1 : -1;
@@ -76,10 +84,12 @@ public class Vector {
     }
 
     /**
-     * @param o un vettore con cui comparare this
+     * @param o vettore la cui coordinata z viene confrontata con quella di this
      * @return 0 se this e o hanno la stessa coordinata z, 1 se this ha coordinata z maggiore di o, -1 altrimenti
+     * @throws NullPointerException se o e' null
      */
     public int compareZ(Vector o) {
+        Objects.requireNonNull(o);
         int res;
         if( (res = Integer.compare(o.z, z)) != 0)
             return res > 0 ? 1 : -1;

@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
  */
 public class AstronomicalSystem {
 
-    // struttura dati che contiene i corpi celeesti del sistema astronomico
+    // struttura dati che contiene i corpi celesti del sistema astronomico
     List<CelestialBody> bodies;
 
     /**
