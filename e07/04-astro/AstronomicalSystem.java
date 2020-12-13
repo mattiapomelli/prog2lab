@@ -4,34 +4,45 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 /*
  *  Overview: Le istanze di questa classe rappresentano dei sistemi astronomici
- *            Un sistema astronomico e' una collezione di corpi celesti, i quali possono essere pianeti o stelle, 
- * 
+ *            Un sistema astronomico e' una collezione di corpi celesti, i quali possono essere pianeti o stelle
  * 
  *            Gli oggetti di questo tipo sono mutabili
  * 
  *  AF(bodies) = { bodies[i] | 0 <= i <= bodies.size() }
+ *  RI: bodies non null e non contiene elementi null
+ * 
+ *  Preservation of RI: bodies viene inizializzata null, e mai riassegnata in quanto final.
  */
 public class AstronomicalSystem {
 
     // struttura dati che contiene i corpi celesti del sistema astronomico
-    List<CelestialBody> bodies;
+    private final List<CelestialBody> bodies;
 
     /**
      * Inizializza this affinche rappresenti un sistema astronomico senza alcun corpo celeste
      */
     public AstronomicalSystem() {
         bodies = new ArrayList<>();
+        assert repOk();
     }
 
     /**
      * Aggiunge il corpo celeste p a this
      * @param p un corpo celeste da aggiungere a this
+     * @throws NullPointerException se p e' null
+     * 
+     * Preservation of RI: Si assume che RI sia valida prima della chiamata e che quindi non contegna elementi null.
+     *                     p viene aggiunto a bodies solo se non null, pertanto anche dopo la chiamata bodies non
+     *                     conterra' elementi null
      */
     public void addBody(CelestialBody p) {
+        Objects.requireNonNull(p);
         bodies.add(p);
+        assert repOk();
     }
 
     /**
@@ -124,5 +135,14 @@ public class AstronomicalSystem {
         }
         res += "Energia totale: " + totalEnergy();
         return res;
+    }
+
+    private boolean repOk() {
+        if(bodies == null) return false;
+        
+        for(CelestialBody b : bodies)
+            if(b == null) return false;
+        
+        return true;
     }
 }
